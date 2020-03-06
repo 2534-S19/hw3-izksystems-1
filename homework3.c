@@ -12,7 +12,7 @@ int main(void)
     unsigned int count1 = 0;
 
     // TODO: Declare the variables that main uses to interact with your state machine.
-    //typedef enum {ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN} THECOUNT;
+    //enum {ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN} THECOUNT;
     //static THECOUNT currentState = ZERO;
 
     // Stops the Watchdog timer.
@@ -33,7 +33,7 @@ int main(void)
         // Update the color of LED2 using count0 as the index.
         // YOU MUST WRITE THIS FUNCTION BELOW.
         changeLaunchpadLED2(count0);
-        //turnOff_LaunchpadLED2Blue(); turnOff_LaunchpadLED2Green(); turnOn_LaunchpadLED2Red();
+
         // Update the color of the Boosterpack LED using count1 as the index.
         // YOU MUST WRITE THIS FUNCTION BELOW.
         changeBoosterpackLED(count1);
@@ -41,7 +41,11 @@ int main(void)
         // TODO: If Timer0 has expired, increment count0.
         // YOU MUST WRITE timer0expired IN myTimer.c
         timer0Expired();
-        //count0++;
+
+
+
+
+
 
 
 
@@ -75,61 +79,72 @@ void changeLaunchpadLED2(unsigned int count)
 {
 
     static THECOUNT currentState = ZERO;
+
     switch (currentState){
     case ZERO:
-        if (count == 0){
+        if (count == 0)
             turnOff_LaunchpadLED2Blue(); turnOff_LaunchpadLED2Green(); turnOff_LaunchpadLED2Red();
-        currentState = ONE;
-    count++;}
+            currentState = ONE;
+    count++;
+
     break;
 
     case ONE:
-        if (count == 1){
+        if (count == 1)
             turnOff_LaunchpadLED2Blue(); turnOff_LaunchpadLED2Green(); turnOn_LaunchpadLED2Red();
-        currentState =TWO;
-    count++;}
+
+            currentState =TWO;
+    count++;
+
     break;
 
     case TWO:
-    if (count == 2){
+    if (count == 2)
             turnOff_LaunchpadLED2Blue(); turnOn_LaunchpadLED2Green(); turnOff_LaunchpadLED2Red();
+
             currentState =THREE;
-    count++;}
+    count++;
+
     break;
 
     case THREE:
-        if (count == 3){
+        if (count == 3)
                 turnOff_LaunchpadLED2Blue(); turnOn_LaunchpadLED2Green(); turnOn_LaunchpadLED2Red();
                 currentState =FOUR;
-        count++;}
+        count++;
+
         break;
 
     case FOUR:
-        if (count == 4){
+        if (count == 4)
                 turnOn_LaunchpadLED2Blue(); turnOff_LaunchpadLED2Green(); turnOff_LaunchpadLED2Red();
-                currentState = FIVE;
-        count++;}
+               currentState = FIVE;
+        count++;
+
         break;
 
     case FIVE:
-        if (count == 5){
+        if (count == 5)
                 turnOn_LaunchpadLED2Blue(); turnOff_LaunchpadLED2Green(); turnOn_LaunchpadLED2Red();
                 currentState =SIX;
-        count++;}
+        count++;
+
         break;
 
     case SIX:
-        if (count == 6){
+        if (count == 6)
                 turnOn_LaunchpadLED2Blue(); turnOn_LaunchpadLED2Green(); turnOff_LaunchpadLED2Red();
                 currentState =SEVEN;
-        count++;}
+        count++;
+
         break;
 
     case SEVEN:
-        if (count == 7){
+        if (count == 7)
                 turnOn_LaunchpadLED2Blue(); turnOn_LaunchpadLED2Green(); turnOn_LaunchpadLED2Red();
                 currentState =ZERO;
-        count = 0;}
+        count = 0;
+
         break;
 
     }

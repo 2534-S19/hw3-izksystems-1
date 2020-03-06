@@ -16,12 +16,16 @@
 void initGPIO()
 {
     // Launchpad S1
+    GPIO_setAsInputPin(GPIO_PORT_P1,GPIO_PIN1);
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P1,GPIO_PIN1);
     // Launchpad S2
+    GPIO_setAsInputPin(GPIO_PORT_P1,GPIO_PIN4);
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P1,GPIO_PIN4);
     // Boosterpack S1
+    GPIO_setAsInputPin(GPIO_PORT_P5,GPIO_PIN1);
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P5,GPIO_PIN1);
     // Boosterpack S2
+    GPIO_setAsInputPin(GPIO_PORT_P3,GPIO_PIN5);
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P3,GPIO_PIN5);
     // Launchpad LED1
     GPIO_setAsOutputPin(GPIO_PORT_P1,GPIO_PIN0);
@@ -41,18 +45,18 @@ void initGPIO()
 
     // Turn off all LEDs at the start.
     GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN0);
-        // Launchpad LED2 Red
-        GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0);
-        // Launchpad LED2 Green
-        GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1);
-        // Launchpad LED2 Blue
-        GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2);
-        // Boosterpack LED Red
-        GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6);
-        // Boosterpack LED Green
-        GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4);
-        // Boosterpack LED Blue
-        GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6);
+    // Launchpad LED2 Red
+    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0);
+    // Launchpad LED2 Green
+    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1);
+    // Launchpad LED2 Blue
+    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2);
+    // Boosterpack LED Red
+    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6);
+    // Boosterpack LED Green
+    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4);
+    // Boosterpack LED Blue
+    GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6);
 
 
 }
@@ -102,84 +106,84 @@ void turnOff_LaunchpadLED1()
 // TODO: Create a function to turn on the Red Launchpad LED2.
 void turnOn_LaunchpadLED2Red()
 {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN0);
-    //return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN0));
+    //GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN0);
+    return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN0));
 }
 
 // TODO: Create a function to turn off the Red Launchpad LED2.
 void turnOff_LaunchpadLED2Red()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN0));
 }
 
 // TODO: Create a function to turn on the Green Launchpad LED2.
 void turnOn_LaunchpadLED2Green()
 {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN1);
-    //return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN1));
+    //GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN1);
+    return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN1));
 }
 
 // TODO: Create a function to turn off the Green Launchpad LED2.
 void turnOff_LaunchpadLED2Green()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN1));
 }
 
 // TODO: Create a function to turn on the Blue Launchpad LED2.
 void turnOn_LaunchpadLED2Blue()
 {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN2);
-    //return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN2));
+    //GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN2);
+    return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN2));
 }
 
 // TODO: Create a function to turn off the Blue Launchpad LED2.
 void turnOff_LaunchpadLED2Blue()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN2));
 
 }
 
 // TODO: Create a function to turn on the Red Boosterpack LED2.
 void turnOn_BoosterpackLEDRed()
 {
-   GPIO_setAsOutputPin(GPIO_PORT_P2,GPIO_PIN6);
-   //return ();
+   //GPIO_setAsOutputPin(GPIO_PORT_P2,GPIO_PIN6);
+   return (GPIO_setAsOutputPin(GPIO_PORT_P2,GPIO_PIN6));
 }
 
 // TODO: Create a function to turn off the Red Boosterpack LED2.
 void turnOff_BoosterpackLEDRed()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN6));
 }
 
 // TODO: Create a function to turn on the Green Boosterpack LED2.
 void turnOn_BoosterpackLEDGreen()
 {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN4);
-    //return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN4));
+    //GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN4);
+    return (GPIO_setOutputHighOnPin(GPIO_PORT_P2,GPIO_PIN4));
 }
 
 // TODO: Create a function to turn off the Green Boosterpack LED2.
 void turnOff_BoosterpackLEDGreen()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P2,GPIO_PIN4));
 }
 
 // TODO: Create a function to turn on the Blue Boosterpack LED2.
 void turnOn_BoosterpackLEDBlue()
 {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P5,GPIO_PIN6);
-    //return (GPIO_setOutputHighOnPin(GPIO_PORT_P5,GPIO_PIN6));
+    //GPIO_setOutputHighOnPin(GPIO_PORT_P5,GPIO_PIN6);
+    return (GPIO_setOutputHighOnPin(GPIO_PORT_P5,GPIO_PIN6));
 }
 
 // TODO: Create a function to turn off the Green Boosterpack LED2.
 void turnOff_BoosterpackLEDBlue()
 {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6);
-    //return (GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6));
+    //GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6);
+    return (GPIO_setOutputLowOnPin(GPIO_PORT_P5,GPIO_PIN6));
 }
